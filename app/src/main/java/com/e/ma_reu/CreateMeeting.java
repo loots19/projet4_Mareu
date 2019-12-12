@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -20,11 +21,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.e.ma_reu.adapter.RoomAdapter;
 import com.e.ma_reu.di.DI;
 import com.e.ma_reu.model.Meeting;
 import com.e.ma_reu.model.Room;
 import com.e.ma_reu.service.MeetingApiService;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -67,8 +70,8 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
         Spinner spinner = findViewById(R.id.spinnerRooms);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        SpinnerAdapter mAdapter = new SpinnerAdapter(this, R.layout.spinner_layout,  mRoomList);
-        spinner.setAdapter(mAdapter);
+        RoomAdapter roomAdapter =new RoomAdapter(this, (ArrayList<Room>) mRoomList);
+        spinner.setAdapter(roomAdapter);
         spinner.setOnItemSelectedListener(this);
 
         mDisplayDate.setOnClickListener(

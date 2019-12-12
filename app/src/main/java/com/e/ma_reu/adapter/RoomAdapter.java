@@ -16,9 +16,9 @@ import com.e.ma_reu.model.Room;
 
 import java.util.ArrayList;
 
-public class SpinnerAdapter extends ArrayAdapter {
+public class RoomAdapter extends ArrayAdapter {
 
-    public SpinnerAdapter(Context context, ArrayList<Room> arrayList){
+    public RoomAdapter(Context context, ArrayList<Room> arrayList){
         super(context,0,arrayList);
 
     }
