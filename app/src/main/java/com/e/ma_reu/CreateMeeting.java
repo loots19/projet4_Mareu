@@ -72,7 +72,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
         // Create an ArrayAdapter using the string array and a default spinner layout
         RoomAdapter roomAdapter =new RoomAdapter(this, (ArrayList<Room>) mRoomList);
         spinner.setAdapter(roomAdapter);
-        //spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(this);
 
         mDisplayDate.setOnClickListener(
                 new View.OnClickListener() {
