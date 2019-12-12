@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMeeting"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateMeeting">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/calendarImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDate"
+            app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:hint="Choisir une date"
+            android:padding="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Button"
+            app:layout_constraintEnd_toEndOf="@+id/tvTime"
+            app:layout_constraintStart_toStartOf="@+id/tvTime"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.152" />
+
+        <ImageView
+            android:id="@+id/timeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTime"
+            app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:hint="Choisir l'heure"
+            android:padding="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Button"
+            app:layout_constraintEnd_toEndOf="@+id/spinnerRooms"
+            app:layout_constraintStart_toStartOf="@+id/spinnerRooms"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            app:layout_constraintVertical_bias="0.143" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerRooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:hint="Select Room"
+            android:textColorHint="@android:color/black"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/Button"
+            app:layout_constraintEnd_toEndOf="@+id/eTextSubject"
+            app:layout_constraintStart_toStartOf="@+id/eTextSubject"
+            app:layout_constraintTop_toBottomOf="@+id/tvTime"
+            app:layout_constraintVertical_bias="0.156" />
+
+        <ImageView
+            android:id="@+id/subjectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="@+id/eTextSubject"
+            app:layout_constraintEnd_toStartOf="@+id/eTextSubject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/eTextSubject"
+            app:srcCompat="@drawable/ic_subject_black_24dp" />
+
+        <EditText
+            android:id="@+id/eTextSubject"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:hint="Sujet de la réunion"
+            android:padding="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Button"
+            app:layout_constraintEnd_toEndOf="@+id/eTextMail"
+            app:layout_constraintStart_toStartOf="@+id/eTextMail"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerRooms"
+            app:layout_constraintVertical_bias="0.125" />
+
+        <ImageView
+            android:id="@+id/groupImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="@+id/eTextMail"
+            app:layout_constraintEnd_toStartOf="@+id/eTextMail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/eTextMail"
+            app:srcCompat="@drawable/ic_group_add_black_24dp" />
+
+        <EditText
+            android:id="@+id/eTextMail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:hint="Participants"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Button"
+            app:layout_constraintEnd_toEndOf="@+id/Button"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/Button"
+            app:layout_constraintTop_toBottomOf="@+id/eTextSubject" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:text=" Enregistrer "
+            android:textColor="@android:color/black"
+            app:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="2dp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
