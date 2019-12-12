@@ -1,31 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+
     <TextView
-        android:id="@+id/tv_dateCustom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:textSize="16sp"
+        android:text="Récapitulatif"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginTop="15dp" />
+
     <TextView
-        android:id="@+id/tv_timeCustom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="La réunion aura lieu : "
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="le : "
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_dateCustom"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+
+            android:layout_width="60dp"
+            android:textColor="@android:color/black"
+            android:text="à : "
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_timeCustom"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="160dp"
+            android:textColor="@android:color/black"
+            android:text="Nombre de participants : "
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_participantCustom"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:textColor="@android:color/black"
+            android:text="Sujet abordé :"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_subjectCustom"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+
     <TextView
-        android:id="@+id/tv_participantCustom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tv_subjectCustom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
+        android:layout_width="160dp"
+        android:textColor="@android:color/black"
+        android:text="Liste des participants : "
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" />
+
     <TextView
         android:id="@+id/Tv_listCustom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="15dp" />
+
     <Button
         android:id="@+id/button_custom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="OK"
+        android:layout_marginTop="15dp" />
 
 </LinearLayout>
