@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         MenuItem menuItem = menu.findItem(R.id.action_search);
         SearchView searchView =(SearchView) menuItem.getActionView();
-//        searchView.setOnQueryTextListener(this);
+        searchView.setOnQueryTextListener(this);
         return true;
     }
 

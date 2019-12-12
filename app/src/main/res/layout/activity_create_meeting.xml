@@ -22,7 +22,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/images" />
 
         <ImageView
             android:id="@+id/calendarImage"
@@ -45,11 +46,13 @@
             android:hint="Choisir une date"
             android:padding="10dp"
             android:textSize="16sp"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/tvTime"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tvTime"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.152" />
+            app:layout_constraintVertical_bias="0.078" />
 
         <ImageView
             android:id="@+id/timeImage"
@@ -72,6 +75,7 @@
             android:hint="Choisir l'heure"
             android:padding="10dp"
             android:textSize="16sp"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/spinnerRooms"
             app:layout_constraintStart_toStartOf="@+id/spinnerRooms"
@@ -91,7 +95,7 @@
             app:layout_constraintEnd_toEndOf="@+id/eTextSubject"
             app:layout_constraintStart_toStartOf="@+id/eTextSubject"
             app:layout_constraintTop_toBottomOf="@+id/tvTime"
-            app:layout_constraintVertical_bias="0.156" />
+            app:layout_constraintVertical_bias="0.115" />
 
         <ImageView
             android:id="@+id/subjectImage"
@@ -114,6 +118,7 @@
             android:hint="Sujet de la réunion"
             android:padding="10dp"
             android:textSize="16sp"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/eTextMail"
             app:layout_constraintStart_toStartOf="@+id/eTextMail"
@@ -142,11 +147,13 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textSize="16sp"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/Button"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="@+id/Button"
-            app:layout_constraintTop_toBottomOf="@+id/eTextSubject" />
+            app:layout_constraintTop_toBottomOf="@+id/eTextSubject"
+            app:layout_constraintVertical_bias="0.45" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Button"
@@ -155,7 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="65dp"
             android:background="@drawable/border"
             android:padding="10dp"
             android:text=" Enregistrer "
@@ -163,10 +170,10 @@
             app:backgroundTint="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:strokeColor="@android:color/black"
             app:strokeWidth="2dp" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
