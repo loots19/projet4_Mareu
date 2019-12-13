@@ -1,4 +1,4 @@
-package com.e.ma_reu;
+package com.e.ma_reu.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
+import com.e.ma_reu.R;
 import com.e.ma_reu.adapter.RecyclerViewAdapter;
 import com.e.ma_reu.di.DI;
 import com.e.ma_reu.model.Meeting;

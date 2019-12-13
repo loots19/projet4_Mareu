@@ -1,4 +1,4 @@
-package com.e.ma_reu;
+package com.e.ma_reu.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,16 +11,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.e.ma_reu.R;
 import com.e.ma_reu.adapter.RoomAdapter;
 import com.e.ma_reu.di.DI;
 import com.e.ma_reu.model.Meeting;
