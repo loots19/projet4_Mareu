@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/calendarImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_image_width_create"
+            android:layout_height="@dimen/size_image_height_create"
             android:layout_alignParentTop="true"
             app:layout_constraintBottom_toBottomOf="@+id/tvDate"
             app:layout_constraintEnd_toStartOf="@+id/tvDate"
@@ -38,14 +38,14 @@
 
         <TextView
             android:id="@+id/tvDate"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/size_editText_width_create"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/border"
             android:hint="Choisir une date"
-            android:padding="10dp"
-            android:textSize="16sp"
+            android:padding="@dimen/padding_create"
+            android:textSize="@dimen/size_text_create"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/tvTime"
@@ -56,8 +56,8 @@
 
         <ImageView
             android:id="@+id/timeImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_image_width_create"
+            android:layout_height="@dimen/size_image_height_create"
             android:layout_alignParentTop="true"
             app:layout_constraintBottom_toBottomOf="@+id/tvTime"
             app:layout_constraintEnd_toStartOf="@+id/tvTime"
@@ -67,14 +67,14 @@
 
         <TextView
             android:id="@+id/tvTime"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/size_editText_width_create"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/border"
             android:hint="Choisir l'heure"
-            android:padding="10dp"
-            android:textSize="16sp"
+            android:padding="@dimen/padding_create"
+            android:textSize="@dimen/size_text_create"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/spinnerRooms"
@@ -99,8 +99,8 @@
 
         <ImageView
             android:id="@+id/subjectImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_image_width_create"
+            android:layout_height="@dimen/size_image_height_create"
             android:layout_alignParentTop="true"
             app:layout_constraintBottom_toBottomOf="@+id/eTextSubject"
             app:layout_constraintEnd_toStartOf="@+id/eTextSubject"
@@ -110,14 +110,14 @@
 
         <EditText
             android:id="@+id/eTextSubject"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/size_editText_width_create"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/border"
             android:hint="Sujet de la réunion"
-            android:padding="10dp"
-            android:textSize="16sp"
+            android:padding="@dimen/padding_create"
+            android:textSize="@dimen/size_text_create"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/eTextMail"
@@ -127,8 +127,8 @@
 
         <ImageView
             android:id="@+id/groupImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_image_width_create"
+            android:layout_height="@dimen/size_image_height_create"
             android:layout_alignParentTop="true"
             app:layout_constraintBottom_toBottomOf="@+id/eTextMail"
             app:layout_constraintEnd_toStartOf="@+id/eTextMail"
@@ -138,15 +138,15 @@
 
         <EditText
             android:id="@+id/eTextMail"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/size_editText_width_create"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/border"
             android:hint="Participants"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textSize="16sp"
+            android:padding="@dimen/padding_create"
+            android:textSize="@dimen/size_text_create"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@+id/Button"
             app:layout_constraintEnd_toEndOf="@+id/Button"
@@ -158,13 +158,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Button"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="300dp"
+            android:layout_width="@dimen/size_button_width_create"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="@dimen/margin_bottom_create"
             android:background="@drawable/border"
-            android:padding="10dp"
+            android:padding="@dimen/padding_create"
             android:text=" Enregistrer "
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/transparent"
