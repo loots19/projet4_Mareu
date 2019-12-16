@@ -188,10 +188,10 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
         if (mSubject.getText().toString().length() == 0 || mMail.getText().length() == 0 || mDisplayTime.getText().toString().length() == 0
                 || mDisplayDate.getText().toString().length() ==0 ) {
-            Toast.makeText(this, "fhfhfhfh", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.empty_text_label, Toast.LENGTH_SHORT).show();
         } else if (mMeetingList.contains(meeting)) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("recapitulatif")
+            builder.setTitle(R.string.room_label)
                     .show();
         } else {
             startActivity(intent);

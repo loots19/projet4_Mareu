@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
 
+
     android:orientation="vertical">
 
 
@@ -21,12 +22,11 @@
         android:id="@+id/item_roomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_start_fra"
         android:textColor="#0C0B0B"
         android:textSize="@dimen/size_text_fra"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/item_mail"
-        app:layout_constraintStart_toEndOf="@+id/item_avatar"
+        app:layout_constraintStart_toStartOf="@+id/item_mail"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -67,15 +67,15 @@
 
     <TextView
         android:id="@+id/item_mail"
-        android:layout_width="210dp"
+        android:layout_width="@dimen/size_width_mail"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:lines="1"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/item_roomName" />
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toEndOf="@+id/item_avatar" />
 
     <ImageButton
         android:id="@+id/item_deleteButton"

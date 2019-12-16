@@ -1,5 +1,6 @@
 package com.e.ma_reu;
 
+import android.view.KeyEvent;
 import android.widget.ImageView;
 
 import androidx.test.espresso.contrib.RecyclerViewActions;
@@ -20,14 +21,24 @@ import java.util.List;
 
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.pressBack;
+import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
+import static androidx.test.espresso.action.ViewActions.pressKey;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.action.ViewActions.typeTextIntoFocusedView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.e.ma_reu.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.core.IsNull.notNullValue;
@@ -95,6 +106,24 @@ public class MeetingTest {
 
     @Test
     public void sortMenu(){
+        onView(withId(R.id.action_search)).perform(click());
+        onView(withId(R.id.action_search)).perform(typeText("salle 5"));
+        onView(withId(R.id.activity_main_recycler_view)).check(matches(hasMinimumChildCount(2)));
+        onView(withId(R.id.action_search)).perform(click());
+
+       // onView(withId(R.id.action_search)).perform(clearText());
+       // onView(withId(R.id.action_search)).perform(typeText("15"));
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Ma_Reu</string>
+    <string name="tittle_label_dialog">Récapitulatif</string>
+    <string name="tittle2_label_dialog">La réunion aura lieu : </string>
+    <string name="time_label_dialog">à : </string>
+    <string name="date_label_dialog">le :</string>
+    <string name="numbers_label_dialog">Nombre de participant</string>
+    <string name="subject_label_dialog">Sujet abordé :</string>
+    <string name="list_label_dialog">Liste des participants</string>
+    <string name="empty_text_label">Vous devez renseigner tous les champs</string>
+    <string name="room_label">Salle déja occupée.</string>
+
 </resources>
