@@ -22,6 +22,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.e.ma_reu.utils.Utils.makeDialog;
+import static com.e.ma_reu.utils.Utils.makeNumberDialog;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.meetingViewHolder> {
 
     private List<Meeting> mMeetingList;
@@ -71,14 +74,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         public void showDialog() {
-            String str = mTextViewMail.getText().toString();
-            String[] tokensVal = str.split(";");
-            List<String> container = Arrays.asList(tokensVal);
-            String listText = "" + container.size();
-            String participants = "";
-            for (String s : container) {
-                participants += s + "\n";
-            }
+
+            String str;
+            str =makeDialog( mTextViewMail.getText().toString());
+            String s;
+            s = makeNumberDialog(mTextViewMail.getText().toString());
+
             final Dialog dialog = new Dialog(itemView.getContext());
             dialog.setContentView(R.layout.custom_layout);
             Button dialogButton = dialog.findViewById(R.id.button_custom);
@@ -93,12 +94,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             TextView textView1 = dialog.findViewById(R.id.tv_timeCustom);
             textView1.setText(mTextViewTime.getText().toString());
             TextView textView2 = dialog.findViewById(R.id.tv_participantCustom);
-            textView2.setText(listText);
+            textView2.setText(s);
             TextView textView3 = dialog.findViewById(R.id.tv_subjectCustom);
             textView3.setText(mTextViewSubject.getText().toString());
             TextView textView4 = dialog.findViewById(R.id.Tv_listCustom);
-            textView4.setText(participants);
-
+            textView4.setText(str);
             dialog.show();
         }
     }
@@ -124,7 +124,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.mTextViewSubject.setText(meeting.getSubject());
         holder.mTextViewTime.setText(meeting.getTime());
         holder.mTextViewDate.setText(meeting.getDate());
-        holder.mTextViewMail.setText(meeting.getMail().replaceAll("[\\s , . : / ]", ";"));
+        holder.mTextViewMail.setText(meeting.getMail().replaceAll("[\\s ,!&$.#|:/]", ";"));
         holder.mButtonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -69,6 +69,7 @@
         android:id="@+id/item_mail"
         android:layout_width="@dimen/size_width_mail"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/size_mail_text_fra"
         android:ellipsize="end"
         android:lines="1"
         android:textStyle="bold"
