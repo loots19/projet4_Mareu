@@ -9,7 +9,8 @@ import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+
+
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -24,8 +25,8 @@ public class MeetingServiceTest {
     @Test
     public void getMeetingWithSucess(){
         List<Meeting> meetings = service.getMeetingList();
-        List<Meeting> expaectedMeetings = DummyMeetingGenerator.DUMMY_MEETINGS;
-        assertThat(meetings, IsIterableContainingInAnyOrder.containsInAnyOrder(expaectedMeetings.toArray()));
+        List<Meeting> expectedMeetings = DummyMeetingGenerator.DUMMY_MEETINGS;
+        assertThat(meetings, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedMeetings.toArray()));
     }
     @Test
     public void deleteMeetingWithSucess(){
@@ -43,9 +44,10 @@ public class MeetingServiceTest {
     @Test
     public void filterWithSucess(){
         String text = "salle 5";
-        ArrayList<Meeting> meetingsSorted = (ArrayList<Meeting>) service.getMeetingList();
 
-        assertEquals(2,meetingsSorted.contains(text));
+
+
+
 
 
     }

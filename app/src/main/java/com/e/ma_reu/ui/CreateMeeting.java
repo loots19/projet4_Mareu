@@ -68,7 +68,6 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
 
         Spinner spinner = findViewById(R.id.spinnerRooms);
-        // Create an ArrayAdapter using the string array and a default spinner layout
         RoomAdapter roomAdapter =new RoomAdapter(this, (ArrayList<Room>) mRoomList);
         spinner.setAdapter(roomAdapter);
         spinner.setOnItemSelectedListener(this);
@@ -112,7 +111,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         selectedTimeFormat(hourOfDay, minute);
-                        String time = (hourOfDay + " : " + minute + " " + mFormat);
+                        String time = (hourOfDay + " : " + minute + " " );
                         mDisplayTime.setText(time);
                     }
                 }, mHour, mMinute, true);
@@ -143,7 +142,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
     }
 
     /**
-     * action on image button create
+     * action on image button
      * and create a new Meeting.
      */
     private void onCreateButton() {

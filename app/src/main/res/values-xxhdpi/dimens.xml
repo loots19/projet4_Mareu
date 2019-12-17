@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--fragment_item -->
+    <!--TextViews -->
+    <dimen name="size_text_fra">20sp</dimen>
+    <dimen name="margin_start_fra">10dp</dimen>
+    <dimen name="size_mail_text_fra">16sp</dimen>
+    <!--ImageView -->
+    <dimen name="size_image_height">80dp</dimen>
+    <dimen name="size_image_width">@dimen/size_image_height</dimen>
+    <dimen name="size_width_mail">250dip</dimen>
+
+
+    <!-- create_meating -->
+    <!--EditText -->
+    <dimen name="size_text_create">20sp</dimen>
+    <dimen name="padding_create">15dip</dimen>
+    <dimen name="size_editText_width_create">230dip</dimen>
+    <!--Button -->
+    <dimen name="size_button_width_create">320dip</dimen>
+    <dimen name="margin_bottom_create">40dip</dimen>
+    <!--ImageView -->
+    <dimen name="size_image_height_create">24dp</dimen>
+    <dimen name="size_image_width_create">@dimen/size_image_height_create</dimen>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</resources>

@@ -3,6 +3,7 @@ package com.e.ma_reu.service;
 import com.e.ma_reu.model.Meeting;
 import com.e.ma_reu.model.Room;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DummyMeetingApiService implements MeetingApiService {
@@ -19,6 +20,7 @@ public class DummyMeetingApiService implements MeetingApiService {
     public List<Room> getRoomList() {
         return mRooms;
     }
+
 
 
 

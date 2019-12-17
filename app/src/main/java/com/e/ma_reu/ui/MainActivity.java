@@ -8,11 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.e.ma_reu.R;
 import com.e.ma_reu.adapter.RecyclerViewAdapter;
@@ -39,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     FloatingActionButton mFab;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +55,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
         setSupportActionBar(toolbar);
-
-
 
         // on récupère notre recyclerView via son id
         mRecyclerView = findViewById(R.id.activity_main_recycler_view);
@@ -92,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
      * add a meeting create in CreateMeeting activity
      * get the object via parcelable and udapte the list.
      */
-    private void addMeeting(){
-        if (getIntent().hasExtra("Meeting")){
+    private void addMeeting() {
+        if (getIntent().hasExtra("Meeting")) {
             Meeting meeting = getIntent().getParcelableExtra("Meeting");
-            if(meeting != null) {
+            if (meeting != null) {
                 mMeetingList.add(meeting);
             }
 
@@ -103,16 +103,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu,menu);
+        inflater.inflate(R.menu.toolbar_menu, menu);
 
         MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView =(SearchView) menuItem.getActionView();
+        SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setOnQueryTextListener(this);
         return true;
     }
-
 
     @Override
     public boolean onQueryTextSubmit(String newText) {
@@ -129,14 +128,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             if (meeting.getNameRoom().contains(userInput)) {
                 newList.add(meeting);
 
-            }else if (meeting.getDate().contains(userInput)){
+            } else if (meeting.getDate().contains(userInput)) {
                 newList.add(meeting);
             }
         }
         mRecyclerViewAdapter.udapteList(newList);
         return true;
     }
-
 }
 
 

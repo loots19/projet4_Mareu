@@ -16,7 +16,7 @@ import com.e.ma_reu.R;
 import com.e.ma_reu.model.Meeting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -72,11 +72,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
 
+        /**
+         * get method from Utils class and update all view in custom dialog
+         */
 
         public void showDialog() {
 
             String str;
-            str =makeDialog( mTextViewMail.getText().toString());
+            str = makeDialog(mTextViewMail.getText().toString());
             String s;
             s = makeNumberDialog(mTextViewMail.getText().toString());
 
@@ -105,7 +108,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     /**
-     * add a meeting and udapte the list
+     * add a meeting and update the list
      *
      * @param newList
      */
@@ -141,7 +144,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     /**
-     * remove the meeting from the list and udapte RecyclerView
+     * remove the meeting from the list and update RecyclerView
      *
      * @param meeting
      */

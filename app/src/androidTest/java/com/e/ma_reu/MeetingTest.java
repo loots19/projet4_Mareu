@@ -1,6 +1,7 @@
 package com.e.ma_reu;
 
 import android.view.KeyEvent;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.test.espresso.contrib.RecyclerViewActions;
@@ -33,6 +34,7 @@ import static androidx.test.espresso.action.ViewActions.typeTextIntoFocusedView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
@@ -54,7 +56,7 @@ public class MeetingTest {
 
 
     private MainActivity mActivity;
-    private List<Meeting> mMeetingList = DummyMeetingGenerator.DUMMY_MEETINGS;
+
 
 
     @Rule
@@ -69,7 +71,6 @@ public class MeetingTest {
 
     @Test
     public void myNeighboursList_shouldNotBeEmpty() {
-        // First scroll to the position that needs to be matched and click on it.
         onView(withId(R.id.activity_main_recycler_view))
                 .check(matches(hasMinimumChildCount(4)));
     }
@@ -109,10 +110,15 @@ public class MeetingTest {
         onView(withId(R.id.action_search)).perform(click());
         onView(withId(R.id.action_search)).perform(typeText("salle 5"));
         onView(withId(R.id.activity_main_recycler_view)).check(matches(hasMinimumChildCount(2)));
-        onView(withId(R.id.action_search)).perform(click());
+        onView(isAssignableFrom(EditText.class)).perform(clearText());
+        onView(withId(R.id.action_search)).perform(typeText("15"));
+        onView(withId(R.id.activity_main_recycler_view)).check(matches(hasMinimumChildCount(2)));
 
-       // onView(withId(R.id.action_search)).perform(clearText());
-       // onView(withId(R.id.action_search)).perform(typeText("15"));
+
+
+
+
+
 
 
 
