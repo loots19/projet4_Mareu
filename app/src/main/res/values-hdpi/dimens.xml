@@ -15,13 +15,24 @@
     <!--EditText -->
     <dimen name="size_text_create">14sp</dimen>
     <dimen name="padding_create">10dip</dimen>
-    <dimen name="size_editText_width_create">200dip</dimen>
+    <dimen name="size_editText_width_create">250dip</dimen>
+    <dimen name="size_margin_top">10dp</dimen>
     <!--Button -->
-    <dimen name="size_button_width_create">300dip</dimen>
+    <dimen name="size_button_width_create">120dip</dimen>
     <dimen name="margin_bottom_create">10dip</dimen>
     <!--ImageView -->
     <dimen name="size_image_height_create">24dp</dimen>
     <dimen name="size_image_width_create">@dimen/size_image_height_create</dimen>
+
+    <!--custom_layout -->
+
+    <dimen name="size_margin_top_custom">16dip</dimen>
+    <!-- TextView -->
+    <dimen name="size_text_custom">16sp</dimen>
+    <dimen name="size_text_tittle_custom">20sp</dimen>
+    <dimen name="size_width_custom">300dip</dimen>
+    <dimen name="size_text_width_custom">200dip</dimen>
+    <dimen name="size_margin_start">10dip</dimen>
 
 
 

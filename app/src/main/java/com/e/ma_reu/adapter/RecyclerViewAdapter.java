@@ -1,6 +1,7 @@
 package com.e.ma_reu.adapter;
 
 import android.app.Dialog;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.e.ma_reu.R;
 import com.e.ma_reu.model.Meeting;
@@ -29,6 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private List<Meeting> mMeetingList;
 
+
     public RecyclerViewAdapter(List<Meeting> items) {
         mMeetingList = items;
 
@@ -40,6 +47,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new meetingViewHolder(view);
 
     }
+
+
 
     public class meetingViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.item_avatar)
@@ -56,25 +65,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView mTextViewMail;
         @BindView(R.id.item_deleteButton)
         ImageButton mButtonDelete;
+        private Meeting mMeeting;
+        private FragmentManager mFragmentManager;
+
 
 
         public meetingViewHolder(@NonNull final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 
+
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showDialog();
+
+                   showDialog();
+                    
+
                 }
 
             });
 
         }
 
-        /**
-         * get method from Utils class and update all view in custom dialog
-         */
+
 
         public void showDialog() {
 
@@ -104,7 +119,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textView4.setText(str);
             dialog.show();
         }
+
+
+        public void bind(Meeting meeting) {
+            mMeeting = meeting;
+            mImageViewAvatar.setImageResource(meeting.getDraw());
+            mTextViewRoom.setText(meeting.getNameRoom());
+            mTextViewSubject.setText(meeting.getSubject());
+            mTextViewTime.setText(meeting.getTime());
+            mTextViewDate.setText(meeting.getDate());
+            mTextViewMail.setText(meeting.getMail().replaceAll("[\\s ,!&$.#|:/]", ";"));
+            mButtonDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    removeMeeting(mMeeting);
+
+                }
+            });
+
+
+        }
+
+
     }
+
 
 
     /**
@@ -122,19 +160,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(final meetingViewHolder holder, final int position) {
         final Meeting meeting = mMeetingList.get(position);
-        holder.mImageViewAvatar.setImageResource(meeting.getDraw());
-        holder.mTextViewRoom.setText(meeting.getNameRoom());
-        holder.mTextViewSubject.setText(meeting.getSubject());
-        holder.mTextViewTime.setText(meeting.getTime());
-        holder.mTextViewDate.setText(meeting.getDate());
-        holder.mTextViewMail.setText(meeting.getMail().replaceAll("[\\s ,!&$.#|:/]", ";"));
-        holder.mButtonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                removeMeeting(meeting);
+        holder.bind(meeting);
 
-            }
-        });
     }
 
     @Override
@@ -153,5 +180,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mMeetingList.remove(currPosition);
         notifyItemRemoved(currPosition);
     }
+
+
 
 }

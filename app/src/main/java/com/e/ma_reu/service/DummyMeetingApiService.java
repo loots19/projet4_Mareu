@@ -21,7 +21,17 @@ public class DummyMeetingApiService implements MeetingApiService {
         return mRooms;
     }
 
+    @Override
+    public List<Meeting> getFilterMeetingList(String text) {
+        ArrayList<Meeting> meetingsSorted = new ArrayList<>();
+        for(Meeting m : mMeetings){
+            if(m.getDate().equalsIgnoreCase(text)|| m.getNameRoom().equalsIgnoreCase(text)){
+             meetingsSorted.add(m);
+            }
+        }
 
+        return meetingsSorted;
+    }
 
 
     @Override

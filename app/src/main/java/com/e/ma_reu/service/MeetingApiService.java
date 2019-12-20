@@ -10,6 +10,7 @@ import java.util.List;
 public interface MeetingApiService {
     List<Meeting> getMeetingList();
     List<Room>getRoomList();
+    List<Meeting>getFilterMeetingList(String text);
 
 
 

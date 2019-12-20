@@ -8,14 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.e.ma_reu.R;
 import com.e.ma_reu.adapter.RecyclerViewAdapter;
@@ -135,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mRecyclerViewAdapter.udapteList(newList);
         return true;
     }
+
 }
 
 
