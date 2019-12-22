@@ -1,6 +1,7 @@
 package com.e.ma_reu.adapter;
 
-import android.app.Dialog;
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -34,10 +36,12 @@ import static com.e.ma_reu.utils.Utils.makeNumberDialog;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.meetingViewHolder> {
 
     private List<Meeting> mMeetingList;
+    AppCompatActivity mContext;
 
 
-    public RecyclerViewAdapter(List<Meeting> items) {
+    public RecyclerViewAdapter(List<Meeting> items,AppCompatActivity context) {
         mMeetingList = items;
+        mContext = context;
 
     }
 
@@ -79,8 +83,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    FragmentTransaction ft = mContext.getSupportFragmentManager().beginTransaction();
+                    Fragment prev = mContext.getSupportFragmentManager().findFragmentByTag("dialog");
+                    if (prev != null) {
+                        ft.remove(prev);
+                    }
+                    ft.addToBackStack(null);
+                    DialogFragment dialogFragment = MyCustomDialogFragment.newInstance(mMeeting);
+                    dialogFragment.show(ft, "dialog");
 
-                   showDialog();
+
+
+                   //showDialog();
                     
 
                 }
@@ -91,34 +105,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
 
-        public void showDialog() {
 
-            String str;
-            str = makeDialog(mTextViewMail.getText().toString());
-            String s;
-            s = makeNumberDialog(mTextViewMail.getText().toString());
-
-            final Dialog dialog = new Dialog(itemView.getContext());
-            dialog.setContentView(R.layout.custom_layout);
-            Button dialogButton = dialog.findViewById(R.id.button_custom);
-            dialogButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
-            TextView textView = dialog.findViewById(R.id.tv_dateCustom);
-            textView.setText(mTextViewDate.getText().toString());
-            TextView textView1 = dialog.findViewById(R.id.tv_timeCustom);
-            textView1.setText(mTextViewTime.getText().toString());
-            TextView textView2 = dialog.findViewById(R.id.tv_participantCustom);
-            textView2.setText(s);
-            TextView textView3 = dialog.findViewById(R.id.tv_subjectCustom);
-            textView3.setText(mTextViewSubject.getText().toString());
-            TextView textView4 = dialog.findViewById(R.id.Tv_listCustom);
-            textView4.setText(str);
-            dialog.show();
-        }
 
 
         public void bind(Meeting meeting) {

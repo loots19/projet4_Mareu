@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         addMeeting();
         actionOnFabButton();
 
+
+
         Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // on donne un adapter a notre recyclerView
-        mRecyclerViewAdapter = new RecyclerViewAdapter(mMeetingList);
+        mRecyclerViewAdapter = new RecyclerViewAdapter(mMeetingList,this);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
 
         // on sépare chaque ligne de notre liste avec un trait

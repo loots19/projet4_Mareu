@@ -24,7 +24,8 @@
         android:text="@string/tittle2_label_dialog"
         android:textColor="@android:color/black"
         android:textSize="@dimen/size_text_custom"
-        android:layout_marginTop="@dimen/size_margin_top">
+        android:layout_marginTop="@dimen/size_margin_top"
+        android:layout_marginStart="@dimen/size_margin_start">
 
     </TextView>
 
@@ -36,11 +37,12 @@
 
         <TextView
 
-            android:layout_width="60dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:text="@string/date_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_dateCustom"
@@ -48,7 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_margin_start"
             android:textSize="@dimen/size_text_custom"
-            android:textColor="#FF69B4" />
+            android:textColor="#FF69B4"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -59,11 +62,12 @@
 
         <TextView
 
-            android:layout_width="60dp"
+            android:layout_width="30dp"
             android:textColor="@android:color/black"
             android:text="@string/time_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_timeCustom"
@@ -71,7 +75,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/size_text_custom"
             android:layout_marginStart="@dimen/size_margin_start"
-            android:textColor="#FF69B4"  />
+            android:textColor="#FF69B4" />
     </LinearLayout>
 
     <LinearLayout
@@ -85,7 +89,8 @@
             android:textColor="@android:color/black"
             android:text="@string/numbers_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_participantCustom"
@@ -108,7 +113,8 @@
             android:textColor="@android:color/black"
             android:text="@string/subject_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_subjectCustom"
@@ -127,7 +133,8 @@
         android:text="@string/list_label_dialog"
         android:textSize="@dimen/size_text_custom"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/size_margin_top" />
+        android:layout_marginTop="@dimen/size_margin_top"
+        android:layout_marginStart="@dimen/size_margin_start"/>
 
     <TextView
         android:id="@+id/Tv_listCustom"
@@ -135,7 +142,8 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/size_text_custom"
         android:textColor="#FF69B4"
-        android:layout_marginTop="@dimen/size_margin_top" />
+        android:layout_marginTop="@dimen/size_margin_top"
+        android:layout_marginStart="@dimen/size_margin_start"/>
 
     <Button
         android:id="@+id/button_custom"
