@@ -15,7 +15,6 @@ public abstract class DummyMeetingGenerator {
             new Meeting(R.drawable.ic_oval5, "salle 5", "Internet", "10 : 0", "11/15/2019", "pierre@lamzone;sylvain@lamzone;david@lamzone;stephane@lamzone"),
             new Meeting(R.drawable.ic_oval5, "salle 5", "Transport", "14 : 0", "11/15/2019", "nina@lamzone;greg@lamzone;dennis@lamzone;eric@lamzone")
 
-
     );
 
     static List<Meeting> generateMeetings() {

@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         actionOnFabButton();
 
 
-
         Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
         setSupportActionBar(toolbar);
 

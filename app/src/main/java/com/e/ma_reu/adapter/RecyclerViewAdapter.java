@@ -1,12 +1,8 @@
 package com.e.ma_reu.adapter;
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,23 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.e.ma_reu.R;
 import com.e.ma_reu.model.Meeting;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.e.ma_reu.utils.Utils.makeDialog;
-import static com.e.ma_reu.utils.Utils.makeNumberDialog;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.meetingViewHolder> {
 
@@ -52,8 +42,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
-
-
     public class meetingViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.item_avatar)
         ImageView mImageViewAvatar;
@@ -70,15 +58,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @BindView(R.id.item_deleteButton)
         ImageButton mButtonDelete;
         private Meeting mMeeting;
-        private FragmentManager mFragmentManager;
 
 
 
         public meetingViewHolder(@NonNull final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,22 +77,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     DialogFragment dialogFragment = MyCustomDialogFragment.newInstance(mMeeting);
                     dialogFragment.show(ft, "dialog");
 
-
-
-                   //showDialog();
-                    
-
                 }
 
             });
 
         }
-
-
-
-
-
-
         public void bind(Meeting meeting) {
             mMeeting = meeting;
             mImageViewAvatar.setImageResource(meeting.getDraw());
@@ -124,13 +98,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
 
-
         }
 
-
     }
-
-
 
     /**
      * add a meeting and update the list
@@ -167,7 +137,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mMeetingList.remove(currPosition);
         notifyItemRemoved(currPosition);
     }
-
-
 
 }

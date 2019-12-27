@@ -99,7 +99,9 @@ public class MeetingTest {
         onView(withId(R.id.spinnerRooms)).perform(click());
         onData(anything()).atPosition(POSITION_ITEM).perform(click());
         onView(withId(R.id.eTextSubject)).perform(typeText("livraisons"));
+        onView(withId(R.id.eTextSubject)).perform(closeSoftKeyboard());
         onView(withId(R.id.eTextMail)).perform(typeText("pierre@lamzone;sylvain@lamzone;david@lamzone;stephane@lamzone"));
+        onView(withId(R.id.eTextMail)).perform(closeSoftKeyboard());
         onView(withId(R.id.Button)).perform(click());
         onView(withId(R.id.activity_main_recycler_view)).check(withItemCount(ITEMS_COUNT+1));
 

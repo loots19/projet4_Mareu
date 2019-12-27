@@ -33,7 +33,6 @@ public class DummyMeetingApiService implements MeetingApiService {
         return meetingsSorted;
     }
 
-
     @Override
     public void addMeeting(Meeting meeting) {
         if(!mMeetings.contains(meeting)){

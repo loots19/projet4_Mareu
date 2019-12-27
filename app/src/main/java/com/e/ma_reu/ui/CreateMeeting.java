@@ -180,7 +180,6 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
                 mDisplayTime.getText().toString(),
                 mDisplayDate.getText().toString(),
                 mMail.getText().toString());
-        mMail.getText().toString();
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("Meeting", meeting);

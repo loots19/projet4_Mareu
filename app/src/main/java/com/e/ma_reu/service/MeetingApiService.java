@@ -13,7 +13,6 @@ public interface MeetingApiService {
     List<Meeting>getFilterMeetingList(String text);
 
 
-
     void addMeeting(Meeting meeting);
 
     void deleteMeeting(Meeting meeting);

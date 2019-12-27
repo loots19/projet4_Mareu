@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Utils {
 
-    public static String makeDialog(String mail) {
+    public static String getListOfparticipant(String mail) {
         String str = "";
         String[] tokensVal = mail.split(";");
 
@@ -16,7 +16,7 @@ public class Utils {
         return str;
 
     }
-    public static String makeNumberDialog(String mail){
+    public static String getNumbersOfParticipant(String mail){
         String s;
         String[] tokensval = mail.split(";");
         List<String>container = Arrays.asList(tokensval);

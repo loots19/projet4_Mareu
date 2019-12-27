@@ -8,15 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.e.ma_reu.R;
 import com.e.ma_reu.model.Meeting;
 
-import static com.e.ma_reu.utils.Utils.makeDialog;
-import static com.e.ma_reu.utils.Utils.makeNumberDialog;
+import static com.e.ma_reu.utils.Utils.getListOfparticipant;
+import static com.e.ma_reu.utils.Utils.getNumbersOfParticipant;
+
 
 public class MyCustomDialogFragment extends DialogFragment {
     @Override
@@ -28,20 +27,18 @@ public class MyCustomDialogFragment extends DialogFragment {
     private TextView mTextViewDateC;
     private TextView mTextViewTimeC;
     private TextView mTextViewParticipantC;
-    private TextView mTextViewSujetC;
+    private TextView mTextViewSubjectC;
     private TextView mTextViewListC;
 
     static MyCustomDialogFragment newInstance(Meeting meeting) {
         MyCustomDialogFragment f = new MyCustomDialogFragment();
 
-        // Supply num input as an argument.
         Bundle args = new Bundle();
         args.putParcelable("meeting", meeting);
         f.setArguments(args);
 
         return f;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +47,7 @@ public class MyCustomDialogFragment extends DialogFragment {
         mTextViewDateC = view.findViewById(R.id.tv_dateCustom);
         mTextViewTimeC = view.findViewById(R.id.tv_timeCustom);
         mTextViewParticipantC = view.findViewById(R.id.tv_participantCustom);
-        mTextViewSujetC = view.findViewById(R.id.tv_subjectCustom);
+        mTextViewSubjectC = view.findViewById(R.id.tv_subjectCustom);
         mTextViewListC = view.findViewById(R.id.Tv_listCustom);
 
         mButtonC.setOnClickListener(new View.OnClickListener() {
@@ -64,13 +61,13 @@ public class MyCustomDialogFragment extends DialogFragment {
 
         mMeeting = getArguments().getParcelable("meeting");
 
-        String str = makeDialog(mMeeting.getMail());
-        String s = makeNumberDialog(mMeeting.getMail());
-
+        String str = getListOfparticipant(mMeeting.getMail());
+        String s = getNumbersOfParticipant(mMeeting.getMail());
+        
         mTextViewDateC.setText(mMeeting.getDate());
         mTextViewTimeC.setText(mMeeting.getTime());
         mTextViewParticipantC.setText(s);
-        mTextViewSujetC.setText(mMeeting.getSubject());
+        mTextViewSubjectC.setText(mMeeting.getSubject());
         mTextViewListC.setText(str);
 
         return view;
