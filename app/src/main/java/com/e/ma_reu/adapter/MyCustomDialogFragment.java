@@ -13,7 +13,7 @@ import androidx.fragment.app.DialogFragment;
 import com.e.ma_reu.R;
 import com.e.ma_reu.model.Meeting;
 
-import static com.e.ma_reu.utils.Utils.getListOfparticipant;
+import static com.e.ma_reu.utils.Utils.getListOfParticipant;
 import static com.e.ma_reu.utils.Utils.getNumbersOfParticipant;
 
 
@@ -42,7 +42,7 @@ public class MyCustomDialogFragment extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.custom_layout, container, false);
+        View view = inflater.inflate(R.layout.custom_layout, container, true);
         mButtonC = view.findViewById(R.id.button_custom);
         mTextViewDateC = view.findViewById(R.id.tv_dateCustom);
         mTextViewTimeC = view.findViewById(R.id.tv_timeCustom);
@@ -61,9 +61,9 @@ public class MyCustomDialogFragment extends DialogFragment {
 
         mMeeting = getArguments().getParcelable("meeting");
 
-        String str = getListOfparticipant(mMeeting.getMail());
+        String str = getListOfParticipant(mMeeting.getMail());
         String s = getNumbersOfParticipant(mMeeting.getMail());
-        
+
         mTextViewDateC.setText(mMeeting.getDate());
         mTextViewTimeC.setText(mMeeting.getTime());
         mTextViewParticipantC.setText(s);

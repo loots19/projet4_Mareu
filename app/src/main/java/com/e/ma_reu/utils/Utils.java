@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Utils {
 
-    public static String getListOfparticipant(String mail) {
+    public static String getListOfParticipant(String mail) {
         String str = "";
-        String[] tokensVal = mail.split(";");
+        String[] tokensVal = mail.replaceAll("[\\s ,!&$.#|:/]", ";").split(";");
 
         for (String a : tokensVal) {
             a += "\n";
@@ -18,7 +18,7 @@ public class Utils {
     }
     public static String getNumbersOfParticipant(String mail){
         String s;
-        String[] tokensval = mail.split(";");
+        String[] tokensval = mail.replaceAll("[\\s ,!&$.#|:/]", ";").split(";");
         List<String>container = Arrays.asList(tokensval);
         s = "" + container.size();
         return s;

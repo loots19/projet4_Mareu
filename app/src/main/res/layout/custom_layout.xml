@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/custom_layout"
     android:orientation="vertical"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/size_margin_top"
     android:layout_marginEnd="@dimen/size_margin_top">
@@ -19,7 +19,7 @@
         android:layout_marginTop="@dimen/size_margin_top" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/tittle2_label_dialog"
         android:textColor="@android:color/black"
@@ -37,7 +37,7 @@
 
         <TextView
 
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/date_label_dialog"
             android:textSize="@dimen/size_text_custom"
@@ -46,7 +46,7 @@
 
         <TextView
             android:id="@+id/tv_dateCustom"
-            android:layout_width="@dimen/size_text_width_custom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_margin_start"
             android:textSize="@dimen/size_text_custom"
@@ -61,17 +61,16 @@
         android:layout_marginTop="@dimen/size_margin_top">
 
         <TextView
-
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:text="@string/time_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_timeCustom"
-            android:layout_width="@dimen/size_text_width_custom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/size_text_custom"
             android:layout_marginStart="@dimen/size_margin_start"
@@ -85,16 +84,16 @@
         android:layout_marginTop="@dimen/size_margin_top">
 
         <TextView
-            android:layout_width="180dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:text="@string/numbers_label_dialog"
             android:textSize="@dimen/size_text_custom"
-            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_margin_start"/>
 
         <TextView
             android:id="@+id/tv_participantCustom"
-            android:layout_width="@dimen/size_text_width_custom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/size_text_custom"
             android:layout_marginStart="@dimen/size_margin_start"
@@ -109,7 +108,7 @@
         android:layout_marginTop="@dimen/size_margin_top">
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:textColor="@android:color/black"
             android:text="@string/subject_label_dialog"
             android:textSize="@dimen/size_text_custom"
@@ -118,7 +117,7 @@
 
         <TextView
             android:id="@+id/tv_subjectCustom"
-            android:layout_width="@dimen/size_text_width_custom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_margin_start"
             android:textSize="@dimen/size_text_custom"
@@ -128,17 +127,17 @@
 
     <TextView
 
-        android:layout_width="170dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:text="@string/list_label_dialog"
         android:textSize="@dimen/size_text_custom"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_margin_top"
         android:layout_marginStart="@dimen/size_margin_start"/>
 
     <TextView
         android:id="@+id/Tv_listCustom"
-        android:layout_width="@dimen/size_text_width_custom"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/size_text_custom"
         android:textColor="#FF69B4"
