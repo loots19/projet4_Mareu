@@ -89,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mTextViewSubject.setText(meeting.getSubject());
             mTextViewTime.setText(meeting.getTime());
             mTextViewDate.setText(meeting.getDate());
-            mTextViewMail.setText(meeting.getMail().replaceAll("[\\s ,!&$.#|:/]", ";"));
+            mTextViewMail.setText(meeting.getMail().replaceAll("[\\s ,!&$#|:/]", ";"));
             mButtonDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

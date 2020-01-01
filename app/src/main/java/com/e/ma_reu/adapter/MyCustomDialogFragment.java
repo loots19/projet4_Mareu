@@ -42,7 +42,7 @@ public class MyCustomDialogFragment extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.custom_layout, container, true);
+        View view = inflater.inflate(R.layout.custom_layout, container, false);
         mButtonC = view.findViewById(R.id.button_custom);
         mTextViewDateC = view.findViewById(R.id.tv_dateCustom);
         mTextViewTimeC = view.findViewById(R.id.tv_timeCustom);

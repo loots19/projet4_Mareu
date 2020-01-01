@@ -37,7 +37,7 @@ public class MeetingServiceTest {
     @Test
     public void addMeetingWithSucess(){
         service.getMeetingList().clear();
-        Meeting meeting = new Meeting(R.drawable.ic_oval3, "salle 3", "Livraison", "9 : 0", "11/13/2019", "maceo@lamzone;manu@lamzone;philipe@lamzone");
+        Meeting meeting = new Meeting(R.drawable.ic_oval3, "salle 3", "Livraison", "9 : 0", "11/13/2019", "maceo@lamzone.com;manu@lamzone.com;philipe@lamzone.com");
         service.addMeeting(meeting);
         assertEquals(1,service.getMeetingList().size());
     }
@@ -46,7 +46,7 @@ public class MeetingServiceTest {
         String text = "salle 5";
         ArrayList<Meeting> meetingSortedRoom = (ArrayList<Meeting>) service.getFilterMeetingList(text);
         assertEquals(2,meetingSortedRoom.size());
-        String textD = "11/15/2019";
+        String textD = "15/11/2019";
         ArrayList<Meeting> meetingSortedDate = (ArrayList<Meeting>) service.getFilterMeetingList(textD);
         assertEquals(2,meetingSortedDate.size());
 

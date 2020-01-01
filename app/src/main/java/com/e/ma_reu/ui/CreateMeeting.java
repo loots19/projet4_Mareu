@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -33,7 +35,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.app.AlertDialog.THEME_HOLO_DARK;
+import static com.e.ma_reu.utils.Utils.getListOfParticipant;
+
+
 public class CreateMeeting extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
     @BindView(R.id.tvDate)
     TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -68,7 +75,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
 
         Spinner spinner = findViewById(R.id.spinnerRooms);
-        RoomAdapter roomAdapter =new RoomAdapter(this, (ArrayList<Room>) mRoomList);
+        RoomAdapter roomAdapter = new RoomAdapter(this, (ArrayList<Room>) mRoomList);
         spinner.setAdapter(roomAdapter);
         spinner.setOnItemSelectedListener(this);
 
@@ -82,7 +89,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
                         mDay = cal.get(Calendar.DAY_OF_MONTH);
 
                         DatePickerDialog dialog = new DatePickerDialog(
-                                CreateMeeting.this, android.R.style.Theme_Holo_Dialog_MinWidth, mDateSetListener, mYear, mMonth, mDay);
+                                CreateMeeting.this, THEME_HOLO_DARK, mDateSetListener, mYear, mMonth, mDay);
                         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                         dialog.show();
                     }
@@ -92,7 +99,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-                String date = month + "/" + dayOfMonth + "/" + year;
+                String date = dayOfMonth + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
             }
         };
@@ -107,11 +114,11 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
                 selectedTimeFormat(mHour, mMinute);
 
-                TimePickerDialog dialog = new TimePickerDialog(CreateMeeting.this, android.R.style.Theme_Holo_Dialog_MinWidth, new TimePickerDialog.OnTimeSetListener() {
+                TimePickerDialog dialog = new TimePickerDialog(CreateMeeting.this, THEME_HOLO_DARK, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         selectedTimeFormat(hourOfDay, minute);
-                        String time = (hourOfDay + " : " + minute + " " );
+                        String time = (hourOfDay + " : " + minute + " ");
                         mDisplayTime.setText(time);
                     }
                 }, mHour, mMinute, true);
@@ -185,21 +192,37 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
         intent.putExtra("Meeting", meeting);
 
         if (mSubject.getText().toString().length() == 0 || mMail.getText().length() == 0 || mDisplayTime.getText().toString().length() == 0
-                || mDisplayDate.getText().toString().length() ==0 ) {
+                || mDisplayDate.getText().toString().length() == 0) {
             Toast.makeText(this, R.string.empty_text_label, Toast.LENGTH_SHORT).show();
         } else if (mMeetingList.contains(meeting)) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.room_label)
                     .show();
+        } else if (!isValidEmail(mMail.getText().toString())){
+            mMail.setError("Format de mail non valid");
+
         } else {
             startActivity(intent);
         }
         return meeting;
 
+    }
+    private boolean isValidEmail(CharSequence target) {
+        boolean emailflag = false;
+        String emailArr[] = target.toString().split("[\\s ;,!&$#|:/]");
+        for (int i = 0; i < emailArr.length; i++) {
+            emailflag = android.util.Patterns.EMAIL_ADDRESS.matcher(
+                    emailArr[i].trim()).matches();
+        }
+        return emailflag;
+    }
+
+
 
     }
 
 
-}
+
+
 
 
